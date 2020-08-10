@@ -204,7 +204,7 @@ class Home extends Component {
                                                             <h5>Seed Phrase &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                            <li><a  data-toggle="modal" data-target="#exampleModalCenterd">Show seed phrase</a></li>
+                                                            <li class="list-group-item" ><a  data-toggle="modal" data-target="#exampleModalCenterd">Show seed phrase</a></li>
                                                             
                                                             {this.state.copySuccess}
                                                         </div>
@@ -218,7 +218,7 @@ class Home extends Component {
                                                             <h5> Encoded Seed Phrase &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                            <li><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Encoded seed phrase</a></li>
+                                                            <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Encoded seed phrase</a></li>
                                                             {this.state.copySuccess}
                                                         </div>
                                                         } 
@@ -230,10 +230,7 @@ class Home extends Component {
                                                             <h5> Private key  &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                            <textarea
-                                                                ref={(textarea) => this.textArea = textarea}
-                                                                value="click here "
-                                                            > <button oclick="value"> show </button></textarea>
+                                                             <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Private Key</a></li>
                                                             {this.state.copySuccess}
                                                         </div>
                                                         } 
@@ -245,10 +242,7 @@ class Home extends Component {
                                                             <h5>  Access Token  &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                            <textarea
-                                                                ref={(textarea) => this.textArea = textarea}
-                                                                value="click to show"
-                                                            > <button oclick="value"> show </button></textarea>
+                                                             <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Access Token</a></li>
                                                             {this.state.copySuccess}
                                                         </div>
                                                         } 
@@ -395,7 +389,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                {/*Security shoe seed phrase */}
+                {/*Security show seed phrase */}
                 <div class="modal fade" id="exampleModalCenterd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
