@@ -35,19 +35,10 @@ class LoginPage extends Component {
             console.log("login success");
         }
         else{
-            prompt("invalid password");
+            alert("invalid password");
         }
         e.preventDefault();
     };
-
-    authenticateloginform(e) {
-        const registeredpassword = localStorage.getItem('password');
-        const { loginpassword } = this.state;
-        if( registeredpassword === loginpassword){
-            prompt("Successfull");
-        }
-        e.preventDefault();
-    }
 
     render() { 
         const {password, confirmpassword } = this.state;
