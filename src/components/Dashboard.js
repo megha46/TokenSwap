@@ -113,9 +113,9 @@ class Home extends Component {
                         <ul style={{padding: 10 }}class="dropdown-menu">
                        
                             <li><a  data-toggle="modal" data-target="#exampleModalCenter">
-                            <i class="fa fa-user" ></i>Aliases</a></li>
+                            <i class="fa fa-user" ></i> Aliases</a></li>
                        
-                            <li><a  data-toggle="modal" data-target="#exampleModalCenters"><i class="fa fa-cog"></i>Settings</a></li>
+                            <li><a  data-toggle="modal" data-target="#exampleModalCenters"><i class="fa fa-cog"></i> Settings</a></li>
                         
                             <li><a data-toggle="modal" data-target="#exampleModalCentersa" type="primary"><i class="fa fa-cog"></i> Switch Account</a></li>
                             <li><a onClick = { this.logout } ><i class="fa fa-sign-out"></i> Logout </a></li>
