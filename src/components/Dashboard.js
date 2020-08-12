@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Auth from '../components/Auth';
 import $ from 'jquery'
 
+const API_KEY = process.env.REACT_APP_API_KEY;
 var jwt = require('jwt-simple');// jwt 
 //current height
 var tabsFn = (function() {
@@ -50,7 +51,7 @@ class Home extends Component {
     //current height of the element
     componentWillMount(){
         console.log("WINDOW : ",window);
-        this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
+        this.setState({height: window.innerHeight + 'px', width:window.innerWidth+'px'});
     }
 
      //copying the text to clipboard
@@ -74,7 +75,8 @@ class Home extends Component {
 
           const mPassword = localStorage.getItem('User');
           var payload = { 'password': this.state.spassword };
-          var secret = ('abc');
+          var secret = API_KEY;
+            ;
           // encode
           const showseedtoken = jwt.encode(payload, secret);
           
@@ -90,7 +92,7 @@ class Home extends Component {
        
     render() { 
         const { navigate } = this.state;
-
+       
         if( navigate ){
             return <Redirect  to="/LoginPage" push={true} />
         }
@@ -106,27 +108,29 @@ class Home extends Component {
                     <li><a href="#T"> Trading </a></li>
                     <li><a href="#I"> Investments </a></li>
                     <li><a href="#W"> Wallet </a></li>
+                    <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
                     <li class="dropdown" >
-                        <a style={{ float: 'left'}} class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <a  class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Account <span class="caret"></span>
                         </a>
                         <ul style={{padding: 10 }}class="dropdown-menu">
                        
-                            <li><a  data-toggle="modal" data-target="#exampleModalCenter">
-                            <i class="fa fa-user" ></i> Aliases</a></li>
+                            <li><a  data-toggle="modal" data-target="#exampleModalCenter" type="primary">
+                            <i class="fa fa-user" ></i> Aliases </a></li>
                        
-                            <li><a  data-toggle="modal" data-target="#exampleModalCenters"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a  data-toggle="modal" data-target="#exampleModalCenters" type="primary"><i class="fa fa-cog"></i> Settings </a></li>
                         
-                            <li><a data-toggle="modal" data-target="#exampleModalCentersa" type="primary"><i class="fa fa-cog"></i> Switch Account</a></li>
+                            <li><a data-toggle="modal" data-target="#exampleModalCentersa" type="primary"><i class="fa fa-cog"></i> Switch Account </a></li>
                             <li><a onClick = { this.logout } ><i class="fa fa-sign-out"></i> Logout </a></li>
                         </ul>
                     </li>
                     </ul>
                 </div>
                 </nav>
+                <nav> <marquee direction="right" href="#"> Notifications :) </marquee> </nav>
 
                 {/* Modal for Aliases, Modal is opened using id attr */}
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -176,14 +180,14 @@ class Home extends Component {
                             <div class="modal-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-5">
+                                        <div class="col-md-5 col-sm-5">
 
                                             {/* Detting options */}
                                             <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#a" data-toggle="tab">General</a></li>
-                                            <li><a href="#b" data-toggle="tab">Security</a></li>
-                                            <li><a href="#c" data-toggle="tab">Network</a></li>
-                                            <li><a href="#d" data-toggle="tab">Info</a></li>
+                                            <li class="active"><a href="#a" data-toggle="tab"><i style={{color: '#333'}}class="fa fa-address-card"></i>General</a></li>
+                                            <li><a href="#b" data-toggle="tab"><i style={{color: '#333'}} class="fa fa-shield"> Security </i></a></li>
+                                            <li><a href="#c" data-toggle="tab"><i style={{color: '#333'}} class="fa fa-server"></i> Network</a></li>
+                                            <li><a href="#d" data-toggle="tab"><i style={{color: '#333'}} class="fa fa-info-circle"></i>Info</a></li>
                                             </ul>
                                             <div class="tab-content">
 
@@ -204,7 +208,7 @@ class Home extends Component {
                                                             <h5>Seed Phrase &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                            <li class="list-group-item" ><a  data-toggle="modal" data-target="#exampleModalCenterd">Show seed phrase</a></li>
+                                                            <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show seed phrase</a></li>
                                                             
                                                             {this.state.copySuccess}
                                                         </div>
@@ -230,7 +234,7 @@ class Home extends Component {
                                                             <h5> Private key  &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                             <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Private Key</a></li>
+                                                            <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Private Key</a></li>
                                                             {this.state.copySuccess}
                                                         </div>
                                                         } 
@@ -242,7 +246,7 @@ class Home extends Component {
                                                             <h5>  Access Token  &nbsp; &nbsp;
                                                                 <span class="badge pull-right"> <i class="fa fa-copy" onClick={this.copyToClipboard}></i> </span>
                                                             </h5>
-                                                             <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show Access Token</a></li>
+                                                            <li class="list-group-item"><a  data-toggle="modal" data-target="#exampleModalCenterd">Show </a></li>
                                                             {this.state.copySuccess}
                                                         </div>
                                                         } 
