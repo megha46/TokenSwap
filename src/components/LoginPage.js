@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Auth from '../components/Auth';
 
 var jwt = require('jwt-simple');
+const API_KEY = process.env.REACT_APP_API_KEY;
  
 class LoginPage extends Component {
 
@@ -24,7 +25,7 @@ class LoginPage extends Component {
         const {loginpassword } = this.state;
        
         var payload = { 'password': this.state.loginpassword };
-        var secret = ('abc');
+        var secret = API_KEY;
         // encode
         var Logintoken = jwt.encode(payload, secret);
         localStorage.setItem('LUser', Logintoken);
