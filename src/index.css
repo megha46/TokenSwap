@@ -123,3 +123,19 @@ body {font-family: "Lato", sans-serif;}
 .row{
   overflow-y: scroll;
 }
+
+.dropdown-menu {
+  background-image: url(../src/greypaper.jpg);  
+}
+.modal-body{
+  background-image: url(../src/greypaper.jpg);  
+}
+.modal-header  {
+  background-color: #333;
+  color: white;
+}
+.modal-footer  {
+  background-color: #333;
+  color: white;
+}
+
