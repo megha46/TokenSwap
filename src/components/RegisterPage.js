@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 var jwt = require('jwt-simple');
- 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 class RegisterPage extends Component {
 
     constructor(props){
@@ -23,7 +24,7 @@ class RegisterPage extends Component {
     handleSubmit(event) {
         const {password, confirmpassword } = this.state;
         var payload = { 'password': this.state.password };
-        var secret = ('abc');
+        var secret = API_KEY;
         // encode
         var token = jwt.encode(payload, secret);
         localStorage.setItem('User', token);
