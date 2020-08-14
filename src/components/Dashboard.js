@@ -127,8 +127,9 @@ class Home extends Component {
                     </ul>
                 </div>
                 </nav>
+                {/*
                 <nav> <marquee direction="right" href="#"> Notifications :) </marquee> </nav>
-
+                */}
                 {/* Modal for Aliases, Modal is opened using id attr */}
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
