@@ -4,14 +4,14 @@ import Auth from '../components/Auth';
 import $ from 'jquery'
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-var jwt = require('jwt-simple');// jwt 
+var jwt = require('jwt-simple');// jwt token
 //current height
 var tabsFn = (function() {
   
     function init() {
       setHeight();
     }
-    
+    //jquery
     function setHeight() {
       var $tabPane = $('.tab-pane'),
           tabsHeight = $('.nav-tabs').height();
