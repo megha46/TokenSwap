@@ -69,7 +69,7 @@ class Home extends Component {
             [event.target.name] : event.target.value
             });
         };
-
+        //authentication 
         showseed(e) {
           const { spassword } = this.state;
 
