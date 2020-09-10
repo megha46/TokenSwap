@@ -11,7 +11,7 @@ var tabsFn = (function() {
     function init() {
       setHeight();
     }
-    //jquery
+    //jquery to get the current height of the tab
     function setHeight() {
       var $tabPane = $('.tab-pane'),
           tabsHeight = $('.nav-tabs').height();
@@ -421,8 +421,8 @@ class Home extends Component {
                     </div>
                 </div>
       
-            </div>    
-                
+            </div>   
+        
         );
     }
 }
