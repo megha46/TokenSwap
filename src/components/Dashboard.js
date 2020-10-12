@@ -38,7 +38,7 @@ class Home extends Component {
             spassword:""
         }
         this.showseed = this.showseed.bind(this);
-        this.handleseed = this.handleseed.bind(this);
+        this.handleSeed = this.handleSeed.bind(this);
         this.logout = this.logout.bind(this);
     }
 
@@ -64,7 +64,7 @@ class Home extends Component {
         this.setState({ copySuccess: 'Copied!' });
       };
 
-        handleseed(event) {
+        handleSeed(event) {
             this.setState({
             [event.target.name] : event.target.value
             });
@@ -409,7 +409,7 @@ class Home extends Component {
                             </div>
                             <div class="modal-body">
                                 <form onSubmit={this.showseed}>
-                                <input type="password" value={this.spassword} name='spassword' onChange={this.handleseed} placeholder="enter tokenSwap pswd"/>
+                                <input type="password" value={this.spassword} name='spassword' onChange={this.handleSeed} placeholder="enter tokenSwap pswd"/>
                                 <button  type="submit"> click ok</button>
                                 </form>
                             </div>
